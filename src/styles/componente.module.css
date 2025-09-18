@@ -1,0 +1,296 @@
+/*background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px);          
+  -webkit-backdrop-filter: blur(10px);  
+  border-radius: 12px;                  
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  padding: 20px;*/
+
+.container {
+  width: 80dvw;
+  height: 90dvh;
+  margin: 20px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.formContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Forms */
+.form {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  top: 0;
+  right: 26%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s ease-in-out;
+  background: #fff;/* quando tiver imagem trocar*/
+  box-sizing: border-box;
+  color: black;
+  overflow: auto;
+}
+
+/* Login inicial */
+.loginForm {
+  left: 0;
+}
+
+/* Cadastro fora da tela à direita */
+.registerForm {
+  left: 100%;
+}
+
+/* Overlay de texto */
+.panelOverlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, #0070f3, #00c6ff);/* quando tiver imagem trocar*/
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  animation: overlayMoveRight 0.8s ease-in-out forwards;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.showRegister .loginForm {
+  animation: loginToLeft 5s forwards;
+}
+
+.showRegister .registerForm {
+  animation: registerFromRight 0.3s forwards;
+}
+
+.showRegister .panelOverlay {
+  animation: overlayMoveLeft 0.6s forwards;
+}
+
+
+/* Login sai para a esquerda */
+@keyframes loginToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Register entra da direita */
+@keyframes registerFromRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-90%);
+  }
+}
+
+/* Overlay vai para a esquerda (quando vai para Register) */
+@keyframes overlayMoveLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Overlay volta para a posição inicial (quando volta para Login) */
+@keyframes overlayMoveRight {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+
+
+/* Inputs e botões */
+.input {
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.button {
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #fff;
+  color: #0070f3;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  background-color: black;
+}
+
+.button:hover {
+  background: #e0e0e0;
+}
+
+/* Link styles */
+.link {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  color: #0070f3;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.linkButton:hover {
+  color: #0056b3;
+}
+
+/* Mobile container */
+.mobileContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.inputTop{
+  margin: 30px 0;
+}
+
+.inputGroup {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Inputs e Selects uniformes */
+.inputGroup input,
+.inputGroup select {
+  width: 100%;
+  padding: 14px 12px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 8px;               /* bordas arredondadas iguais ao input */
+  outline: none;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.2); /* fundo turvo */
+  color: #333;
+  backdrop-filter: blur(10px);          /* efeito turvo */
+  -webkit-backdrop-filter: blur(10px);
+  appearance: none;                     /* remove estilo padrão do select */
+  box-sizing: border-box;
+}
+
+/* Labels flutuantes */
+.inputGroup label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 4px;
+  color: #aaa;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.inputGroup input:focus {
+  border: 2px solid #0070f3;
+  background: rgba(0, 112, 243, 0.1);
+  color: #000;
+}
+
+/* Label sobe quando input/select está focado ou preenchido */
+.inputGroup input:focus + label,
+.inputGroup input:not(:placeholder-shown) + label,
+.inputGroup select:focus + label,
+.inputGroup select:not([value=""]) + label {
+  top: -10px;
+  font-size: 12px;
+  color: #000;
+}
+
+/* Seta personalizada do select */
+.inputGroup select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><polygon points='0,0 16,0 8,8' fill='%23999'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .inputGroup input,
+  .inputGroup select {
+    font-size: 14px;
+    padding: 12px 10px;
+  }
+
+  .inputGroup label {
+    font-size: 11px;
+  }
+
+  .container {
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+  }
+
+  .formContainer {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Forms empilhados verticalmente */
+  .form {
+    position: relative;
+    width: 100%;
+    left: 0 !important;
+    transform: none !important;
+    margin-bottom: 20px;
+    height: auto;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    align-items: center;
+    color: black;
+    background: rgba(255, 255, 255, 0.2);
+    /* cor semi-transparente */
+    backdrop-filter: blur(10px);
+    /* aplica o desfoque */
+    -webkit-backdrop-filter: blur(10px);
+    /* suporte Safari */
+    border-radius: 12px;
+    /* borda arredondada */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* borda suave */
+    padding: 20px;
+  }
+
+
+  /* Overlay ocupando toda a largura */
+  .panelOverlay {
+    display: none;
+  }
+}
