@@ -1,3 +1,4 @@
+"use client";
 import styles from "@/styles/componente.module.css";
 import Input from "../input/input";
 
