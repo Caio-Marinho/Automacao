@@ -1,39 +1,49 @@
 "use client";
-import styles from "@/styles/componente.module.css";
+import stylesGlobal from "@/styles/componente.module.css";
 
-interface SelectProps {
-    id: string;
-    label: string;
-    values: string[];
-    labels: string[];
-    required?: boolean;
-    value: string;
-    AtualizarEstado: (e: React.ChangeEvent<HTMLSelectElement>) => void
+interface opcao {
+  texto: string;
+  valor: string;
 }
 
-const Select: React.FC<SelectProps> = ({ id, label, values, labels, required = false,AtualizarEstado,value }) => {
+interface SelectProps {
+  id: string;
+  texto: string;
+  opcaoes: opcao[]; // lista de objetos { label, value }
+  obrigatorio?: boolean;
+  valor: string;
+  AtualizarEstado: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+}
 
-    if (values.length !== labels.length) {
-        console.warn("Values e labels devem ter o mesmo tamanho!");
-    }
+const Select: React.FC<SelectProps> = ({ 
+  id, 
+  texto, 
+  opcaoes, 
+  obrigatorio = false, 
+  AtualizarEstado, 
+  valor 
+}) => {
+  return (
+    <div className={stylesGlobal.inputGroup}>
+      <select
+        id={id}
+        required={obrigatorio}
+        value={valor}
+        onChange={AtualizarEstado}
+        aria-label={texto}
+      >
+        <option value="" disabled>
+          {texto}{obrigatorio ? " *" : ""}
+        </option>
 
-    return (
-        <div className={styles.inputGroup}>
-            <select
-                id={id}
-                required={required}
-                value={value}
-                onChange={AtualizarEstado}
-            >
-                <option value="" disabled>{label}</option>
-                {values.map((value, index) => (
-                    <option key={value} value={value}>
-                        {labels[index]}
-                    </option>
-                ))}
-            </select>
-        </div>
-    );
+        {opcaoes.map((opt) => (
+          <option key={opt.valor} value={opt.valor}>
+            {opt.texto}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
 };
 
 export default Select;

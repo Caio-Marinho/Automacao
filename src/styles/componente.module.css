@@ -46,7 +46,7 @@
 
 /* Cadastro fora da tela à direita */
 .registerForm {
-  left: 100%;
+  animation: registerIncial 0s forwards;
 }
 
 /* Overlay de texto */
@@ -70,51 +70,16 @@
 }
 
 .showRegister .loginForm {
-  animation: loginToLeft 5s forwards;
+  animation: loginToLeft 30s forwards;
 }
 
 .showRegister .registerForm {
-  animation: registerFromRight 0.3s forwards;
+  animation: registerFromRight 0s forwards;
 }
 
 .showRegister .panelOverlay {
-  animation: overlayMoveLeft 0.6s forwards;
+  animation: overlayMoveLeft 0.8s ease-in-out forwards;
 }
-
-
-/* Login sai para a esquerda */
-@keyframes loginToLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-/* Register entra da direita */
-@keyframes registerFromRight {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-90%);
-  }
-}
-
-/* Overlay vai para a esquerda (quando vai para Register) */
-@keyframes overlayMoveLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-/* Overlay volta para a posição inicial (quando volta para Login) */
-@keyframes overlayMoveRight {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(0); }
-}
-
-
 
 /* Inputs e botões */
 .input {
@@ -293,4 +258,48 @@
   .panelOverlay {
     display: none;
   }
+}
+
+/*Animações*/
+
+/* Login sai para a esquerda */
+@keyframes loginToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Register entra da direita */
+@keyframes registerFromRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(60%);
+  }
+}
+
+/* Register entra da direita */
+@keyframes registerIncial {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(60%);
+  }
+}
+
+/* Overlay vai para a esquerda (quando vai para Register) */
+@keyframes overlayMoveLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Overlay volta para a posição inicial (quando volta para Login) */
+@keyframes overlayMoveRight {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
 }

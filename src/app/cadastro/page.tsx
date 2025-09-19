@@ -1,4 +1,4 @@
-import RegisterForm from "@/components/cadastro/RegisterForm";
+import RegisterForm from "@/components/cadastro/FormCadastroUsuario";
 import Link from 'next/link';
 import styles from "./cadastro.module.css";
 

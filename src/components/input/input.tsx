@@ -1,39 +1,40 @@
 "use client";
-import styles from "@/styles/componente.module.css";
+import stylesGlobal from "@/styles/componente.module.css";
+import styleLocal from "./input.module.css";
 
 interface InputProps {
-  type: string;
+  tipo: string;
   id: string;
-  label: string;
-  placeholder?: string;
-  required?: boolean;
-  value: string;
+  texto: string;
+  legenda?: string;
+  obrigatorio?: boolean;
+  valor: string;
   estilo?:string; 
   AtualizarEstado: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function Input({
-  type,
+  tipo,
   id,
-  label,
-  placeholder = " ",
-  required = false,
-  value,
+  texto,
+  legenda = " ",
+  obrigatorio = false,
+  valor,
   AtualizarEstado,
   estilo
 }: InputProps) {
   return (
-    <div className={`${styles.inputGroup} ${estilo}`}>
+    <div className={`${stylesGlobal.inputGroup} ${estilo}`}>
       <input
-        type={type}
+        type={tipo}
         id={id}
-        placeholder={placeholder}
-        required={required}
-        value={value}
+        placeholder={legenda}
+        required={obrigatorio}
+        value={valor}
         onChange={AtualizarEstado}
       />
       <label htmlFor={id}>
-        {label} {required && <span style={{ color: "red" }}>*</span>}
+        {texto} {obrigatorio && <span className={styleLocal.span}>*</span>}
       </label>
     </div>
   );

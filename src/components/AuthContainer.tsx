@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "@/styles/componente.module.css";
-import LoginForm from "./login/LoginForm";
-import RegisterForm from "./cadastro/RegisterForm";
+import LoginForm from "./login/FormLogin";
+import RegisterForm from "./cadastro/FormCadastroUsuario";
 
 // Hook para detectar se é mobile
 function useIsMobile(breakpoint = 768) {
