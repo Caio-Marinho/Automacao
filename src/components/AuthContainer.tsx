@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import styles from "@/styles/componente.module.css";
 import LoginForm from "./login/FormLogin";
 import RegisterForm from "./cadastro/FormCadastroUsuario";
+import Botao from "./button/button";
 
 // Hook para detectar se é mobile
 function useIsMobile(breakpoint = 768) {
@@ -59,9 +60,9 @@ export default function AuthContainer() {
               ? "Clique abaixo para criar sua conta rapidamente."
               : "Faça login para continuar usando nossos serviços."}
           </p>
-          <button className={styles.button} onClick={() => setIsLogin(!isLogin)}>
+          <Botao estilo={styles.button} AoClicar={() => setIsLogin(!isLogin)}>
             {isLogin ? "Cadastrar" : "Login"}
-          </button>
+          </Botao>
         </div>
       </div>
     </div>

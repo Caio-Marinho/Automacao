@@ -1,28 +1,15 @@
 "use client";
 import stylesGlobal from "@/styles/componente.module.css";
+import { SelectProps } from "@/types";
 
-interface opcao {
-  texto: string;
-  valor: string;
-}
-
-interface SelectProps {
-  id: string;
-  texto: string;
-  opcaoes: opcao[]; // lista de objetos { label, value }
-  obrigatorio?: boolean;
-  valor: string;
-  AtualizarEstado: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-}
-
-const Select: React.FC<SelectProps> = ({ 
+const Select = ({ 
   id, 
   texto, 
   opcaoes, 
   obrigatorio = false, 
   AtualizarEstado, 
   valor 
-}) => {
+}:SelectProps) => {
   return (
     <div className={stylesGlobal.inputGroup}>
       <select

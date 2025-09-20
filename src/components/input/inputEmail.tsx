@@ -1,16 +1,7 @@
 "use client";
 import stylesGlobal from "@/styles/componente.module.css";
 import styleLocal from "./input.module.css";
-
-interface InputProps {
-  id: string;
-  texto: string;
-  legenda?: string;
-  obrigatorio?: boolean;
-  valor: string;
-  estilo?:string; 
-  AtualizarEstado: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+import { InputProps } from "@/types";
 
 export default function InputEmail({
   id,

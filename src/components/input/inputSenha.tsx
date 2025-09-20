@@ -3,16 +3,7 @@ import { useState } from "react";
 import stylesGlobal from "@/styles/componente.module.css";
 import styleLocal from "./input.module.css";
 import { Eye, EyeOff } from "lucide-react";
-
-interface InputProps {
-    id: string;
-    texto: string;
-    legenda?: string;
-    obrigatorio?: boolean;
-    valor: string;
-    estilo?: string;
-    AtualizarEstado: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+import { InputProps } from "@/types";
 
 export default function InputSenha({
     id,
