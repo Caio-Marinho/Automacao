@@ -69,6 +69,10 @@
   box-sizing: border-box;
 }
 
+.modalOpen .panelOverlay{
+  animation: overlayMoveLeft 0s forwards !important;
+}
+
 .showRegister .loginForm {
   animation: loginToLeft 30s forwards;
 }
@@ -80,7 +84,6 @@
 .showRegister .panelOverlay {
   animation: overlayMoveLeft 0.8s ease-in-out forwards;
 }
-
 /* Inputs e botões */
 .input {
   margin: 10px 0;

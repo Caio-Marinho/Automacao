@@ -6,6 +6,7 @@ import styles from "@/styles/componente.module.css";
 import LoginForm from "./login/FormLogin";
 import RegisterForm from "./cadastro/FormCadastroUsuario";
 import Botao from "./button/button";
+import ModalAlerta from "./modal/modalAlerta";
 
 // Hook para detectar se é mobile
 function useIsMobile(breakpoint = 768) {
@@ -22,6 +23,12 @@ function useIsMobile(breakpoint = 768) {
 }
 
 export default function AuthContainer() {
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
+  const abrirAlerta = () => setIsAlertOpen(true);
+  const fecharAlerta = () => {
+    setIsAlertOpen(false);
+    setIsLogin(true);
+  }
   const [isLogin, setIsLogin] = useState(true);
   const isMobile = useIsMobile();
   const router = useRouter();
@@ -42,14 +49,16 @@ export default function AuthContainer() {
 
   // Componente interno para desktop
   const AuthDesktop = () => (
-    <div className={`${styles.container} ${!isLogin ? styles.showRegister : ""}`}>
+    <div
+      className={`${styles.container} ${!isLogin ? styles.showRegister : ""} ${isAlertOpen ? styles.modalOpen : ""}`}
+    >
       <div className={styles.formContainer}>
         {/* Formulários */}
         <div className={`${styles.form} ${styles.loginForm}`}>
           <LoginForm />
         </div>
         <div className={`${styles.form} ${styles.registerForm}`}>
-          <RegisterForm />
+          <RegisterForm abrirModal={abrirAlerta} />
         </div>
 
         {/* Overlay de texto */}
@@ -65,6 +74,14 @@ export default function AuthContainer() {
           </Botao>
         </div>
       </div>
+
+      <ModalAlerta
+        isOpen={isAlertOpen}
+        title="Atenção"
+        message="Seu cadastro foi enviado com sucesso!, aguarde a aprovação do seu cadastro."
+        onClose={fecharAlerta}
+        confirmText="Entendi"
+      />
     </div>
   );
 

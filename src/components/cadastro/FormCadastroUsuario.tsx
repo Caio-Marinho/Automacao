@@ -7,7 +7,11 @@ import InputSenha from "../input/inputSenha";
 import InputEmail from "../input/inputEmail";
 import BotaoConfirm from "../button/buttonConfirm";
 
-export default function RegisterForm() {
+interface FilhoProps{
+  abrirModal: () => void
+}
+
+export default function RegisterForm({abrirModal}:FilhoProps) {
   const [codigo, setCodigo] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [senha, setSenha] = useState<string>("");
@@ -51,7 +55,7 @@ export default function RegisterForm() {
 
       <Select valor={cargo} AtualizarEstado={(e) => setCargo(e.target.value)} id="cargo" texto="Cargo" obrigatorio opcaoes={opcaoesCargo} />
 
-      <BotaoConfirm texto="Cadastrar" AoClicar={() => {}} estilo={stylesGlobal.button} />
+      <BotaoConfirm texto="Cadastrar" AoClicar={abrirModal} estilo={stylesGlobal.button} />
     </div>
 
   );
