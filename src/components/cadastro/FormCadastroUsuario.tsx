@@ -2,11 +2,17 @@
 import stylesGlobal from "@/styles/componente.module.css";
 import { useEffect, useState } from "react";
 import Select from "../Select/select";
-import Input from "../input/input";
+import InputTexto from "../input/inputTexto";
+import InputSenha from "../input/inputSenha";
+import InputEmail from "../input/inputEmail";
 
 export default function RegisterForm() {
-  const [area, setArea] = useState("");
-  const [cargo, setCargo] = useState("");
+  const [codigo, setCodigo] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [senha, setSenha] = useState<string>("");
+  const [nome, setNome] = useState<string>("");
+  const [area, setArea] = useState<string>("");
+  const [cargo, setCargo] = useState<string>("");
   
   const opcaoesAreas =[
     { valor: "OGV", texto: "OGV" },
@@ -32,13 +38,13 @@ export default function RegisterForm() {
     <div className={stylesGlobal.form}>
       <h2>Cadastrar</h2>
 
-      <Input estilo={`${stylesGlobal.inputTop}`} id="codigo" tipo="text" texto="Código de membro" obrigatorio valor="" AtualizarEstado={() => {}}/>
+      <InputTexto estilo={`${stylesGlobal.inputTop}`} id="codigo" texto="Código de membro" obrigatorio valor={codigo} AtualizarEstado={(e) => {setCodigo(e.target.value)}}/>
 
-      <Input id="nome" tipo="text" texto="nome" obrigatorio valor="" AtualizarEstado={() => {}}/>
+      <InputTexto id="nome" texto="nome" obrigatorio valor={nome} AtualizarEstado={(e) => {setNome(e.target.value)}}/>
 
-      <Input id="email" tipo="E-mail Aiesec" texto="email" obrigatorio valor="" AtualizarEstado={() => {}}/>
+      <InputEmail id="email" texto="email" obrigatorio valor={email} AtualizarEstado={(e) => {setEmail(e.target.value)}}/>
 
-      <Input id="senha" tipo="senha" texto="password" obrigatorio valor="" AtualizarEstado={() => {}} />
+      <InputSenha id="senha" texto="senha" obrigatorio valor={senha} AtualizarEstado={(e) => {setSenha(e.target.value)}} />
 
       <Select valor={area}  AtualizarEstado={(e) => setArea(e.target.value)}  id="areas" texto="Areas" obrigatorio opcaoes={opcaoesAreas} />
 

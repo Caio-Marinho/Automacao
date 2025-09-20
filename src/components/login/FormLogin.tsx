@@ -1,15 +1,16 @@
 "use client";
 import stylesGlobal from "@/styles/componente.module.css";
-import Input from "../input/input";
+import InputTexto from "../input/inputTexto";
+import InputSenha from "../input/inputSenha";
 
 export default function LoginForm() {
   return (
      <div className={stylesGlobal.form}>
       <h2>Login</h2>
 
-      <Input estilo={`${stylesGlobal.inputTop}`} id="email" tipo="text" texto="E-mail Aiesec" obrigatorio valor="" AtualizarEstado={() => {}}/>
+      <InputTexto estilo={`${stylesGlobal.inputTop}`} id="email" texto="E-mail Aiesec" obrigatorio valor="" AtualizarEstado={() => {}}/>
 
-      <Input id="senha" texto="senha" tipo="password" obrigatorio valor="" AtualizarEstado={() => {}} />
+      <InputSenha id="senha" texto="senha" obrigatorio valor="" AtualizarEstado={() => {}} />
 
       <button className={stylesGlobal.button}>Registrar</button>
     </div>

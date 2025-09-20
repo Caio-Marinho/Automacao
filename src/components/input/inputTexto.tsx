@@ -3,7 +3,6 @@ import stylesGlobal from "@/styles/componente.module.css";
 import styleLocal from "./input.module.css";
 
 interface InputProps {
-  tipo: string;
   id: string;
   texto: string;
   legenda?: string;
@@ -13,8 +12,7 @@ interface InputProps {
   AtualizarEstado: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function Input({
-  tipo,
+export default function InputTexto({
   id,
   texto,
   legenda = " ",
@@ -26,7 +24,7 @@ export default function Input({
   return (
     <div className={`${stylesGlobal.inputGroup} ${estilo}`}>
       <input
-        type={tipo}
+        type="text"
         id={id}
         placeholder={legenda}
         required={obrigatorio}
