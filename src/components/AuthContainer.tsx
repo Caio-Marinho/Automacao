@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "@/styles/componente.module.css";
-import LoginForm from "./login/FormLogin";
-import RegisterForm from "./cadastro/FormCadastroUsuario";
+import FormLogin from "./login/FormLogin";
+import FormCadastroUsuario from "./cadastro/FormCadastroUsuario";
 import Botao from "./button/button";
 import ModalAlerta from "./modal/modalAlerta";
 
@@ -22,14 +22,16 @@ function useIsMobile(breakpoint = 768) {
   return isMobile;
 }
 
-export default function AuthContainer() {
+export default function ContainerAutenticacao() {
   const [isAlertOpen, setIsAlertOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
+
   const abrirAlerta = () => setIsAlertOpen(true);
   const fecharAlerta = () => {
     setIsAlertOpen(false);
     setIsLogin(true);
   }
-  const [isLogin, setIsLogin] = useState(true);
+
   const isMobile = useIsMobile();
   const router = useRouter();
 
@@ -55,10 +57,10 @@ export default function AuthContainer() {
       <div className={styles.formContainer}>
         {/* Formulários */}
         <div className={`${styles.form} ${styles.loginForm}`}>
-          <LoginForm />
+          <FormLogin />
         </div>
         <div className={`${styles.form} ${styles.registerForm}`}>
-          <RegisterForm abrirModal={abrirAlerta} />
+          <FormCadastroUsuario abrirModal={abrirAlerta} />
         </div>
 
         {/* Overlay de texto */}
@@ -76,11 +78,11 @@ export default function AuthContainer() {
       </div>
 
       <ModalAlerta
-        isOpen={isAlertOpen}
-        title="Atenção"
-        message="Seu cadastro foi enviado com sucesso!, aguarde a aprovação do seu cadastro."
-        onClose={fecharAlerta}
-        confirmText="Entendi"
+        aberto={isAlertOpen}
+        titulo="Atenção"
+        mensagem="Seu cadastro foi enviado com sucesso!, aguarde a aprovação do seu cadastro."
+        aoFechar={fecharAlerta}
+        textoConfirmar="Entendi"
       />
     </div>
   );

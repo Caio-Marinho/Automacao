@@ -1,7 +1,7 @@
 "use client";
 import stylesGlobal from "@/styles/componente.module.css";
 import styleLocal from "./input.module.css";
-import { InputProps } from "@/types";
+import { EntradaProps } from "@/types";
 
 export default function InputEmail({
   id,
@@ -11,7 +11,7 @@ export default function InputEmail({
   valor,
   AtualizarEstado,
   estilo
-}: InputProps) {
+}: EntradaProps) {
   return (
     <div className={`${stylesGlobal.inputGroup} ${estilo}`}>
       <input

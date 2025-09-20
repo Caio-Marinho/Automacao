@@ -1,8 +1,8 @@
 "use client";
-import { ButtonProps } from "@/types";
+import { BotaoProps } from "@/types";
 import styles from "./button.module.css";
 
-export default function Botao({ estilo, AoClicar, children, tipo = "button" }: ButtonProps) {
+export default function Botao({ estilo, AoClicar, children, tipo = "button" }: BotaoProps) {
   return (
     <button
       className={`${styles.botao} ${estilo}`}

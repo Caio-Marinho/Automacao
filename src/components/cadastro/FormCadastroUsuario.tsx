@@ -11,7 +11,7 @@ interface FilhoProps{
   abrirModal: () => void
 }
 
-export default function RegisterForm({abrirModal}:FilhoProps) {
+export default function FormCadastroUsuario({abrirModal}:FilhoProps) {
   const [codigo, setCodigo] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [senha, setSenha] = useState<string>("");
@@ -41,19 +41,21 @@ export default function RegisterForm({abrirModal}:FilhoProps) {
 
   return (
     <div className={stylesGlobal.form}>
-      <h2>Cadastrar</h2>
+      <h2 className={stylesGlobal.tituloCadastro}>Cadastrar</h2>
 
-      <InputTexto estilo={`${stylesGlobal.inputTop}`} id="codigo" texto="Código de membro" obrigatorio valor={codigo} AtualizarEstado={(e) => { setCodigo(e.target.value) }} />
+      <div className={stylesGlobal.gridCadastro}>
+        <InputTexto id="codigo" texto="Código de membro" obrigatorio valor={codigo} AtualizarEstado={(e) => { setCodigo(e.target.value) }} />
 
-      <InputTexto id="nome" texto="nome" obrigatorio valor={nome} AtualizarEstado={(e) => { setNome(e.target.value) }} />
+        <InputTexto id="nome" texto="nome" obrigatorio valor={nome} AtualizarEstado={(e) => { setNome(e.target.value) }} />
 
-      <InputEmail id="email" texto="email" obrigatorio valor={email} AtualizarEstado={(e) => { setEmail(e.target.value) }} />
+        <InputEmail id="email" texto="email" obrigatorio valor={email} AtualizarEstado={(e) => { setEmail(e.target.value) }} />
 
-      <InputSenha id="senha" texto="senha" obrigatorio valor={senha} AtualizarEstado={(e) => { setSenha(e.target.value) }} />
+        <InputSenha id="senha" texto="senha" obrigatorio valor={senha} AtualizarEstado={(e) => { setSenha(e.target.value) }} />
 
-      <Select valor={area} AtualizarEstado={(e) => setArea(e.target.value)} id="areas" texto="Areas" obrigatorio opcaoes={opcaoesAreas} />
+        <Select valor={area} AtualizarEstado={(e) => setArea(e.target.value)} id="areas" texto="Areas" obrigatorio opcaoes={opcaoesAreas} />
 
-      <Select valor={cargo} AtualizarEstado={(e) => setCargo(e.target.value)} id="cargo" texto="Cargo" obrigatorio opcaoes={opcaoesCargo} />
+        <Select valor={cargo} AtualizarEstado={(e) => setCargo(e.target.value)} id="cargo" texto="Cargo" obrigatorio opcaoes={opcaoesCargo} />
+      </div>
 
       <BotaoConfirm texto="Cadastrar" AoClicar={abrirModal} estilo={stylesGlobal.button} />
     </div>

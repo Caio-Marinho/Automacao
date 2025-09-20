@@ -1,6 +1,6 @@
 import AuthContainer from "./AuthContainer"; // Importe o componente AuthContainer
 
-const Login = () => {
+const ContainerAutenticacao = () => {
     return (
         <div>
             <AuthContainer />
@@ -8,4 +8,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default ContainerAutenticacao;

@@ -1,8 +1,8 @@
 "use client";
-import { ButtonConfirmCancelProps } from "@/types";
+import { BotaoConfirmarCancelarProps } from "@/types";
 import style from "./button.module.css"; // use seu CSS ou Tailwind
 
-export default function BotaoConfirm({ AoClicar, desativar = false, estilo, texto = "Confirmar" }: ButtonConfirmCancelProps) {
+export default function BotaoConfirm({ AoClicar, desativar = false, estilo, texto = "Confirmar" }: BotaoConfirmarCancelarProps) {
   return (
     <button
       type="button"

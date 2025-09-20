@@ -1,12 +1,12 @@
-interface opcao {
+interface Opcao {
   texto: string;
   valor: string;
 }
 
-export interface SelectProps {
+export interface SelecaoProps {
   id: string;
   texto: string;
-  opcaoes: opcao[]; // lista de objetos { label, value }
+  opcaoes: Opcao[]; // lista de objetos { label, value }
   obrigatorio?: boolean;
   valor: string;
   AtualizarEstado: (e: React.ChangeEvent<HTMLSelectElement>) => void;

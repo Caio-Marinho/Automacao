@@ -84,6 +84,14 @@
 .showRegister .panelOverlay {
   animation: overlayMoveLeft 0.8s ease-in-out forwards;
 }
+
+/* Título do cadastro com espaçamento inferior para não cobrir labels */
+.tituloCadastro {
+  margin: 0 0 20px 0;
+  align-self: center;
+  text-align: center;
+}
+
 /* Inputs e botões */
 .input {
   margin: 10px 0;
@@ -176,7 +184,7 @@
   top: 50%;
   transform: translateY(-50%);
   padding: 0 4px;
-  color: #aaa;
+  color: #777;
   pointer-events: none;
   transition: all 0.2s ease;
 }
@@ -203,6 +211,32 @@
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 12px;
+}
+
+/* Layout do formulário de cadastro: duas colunas e selects em linha cheia */
+.gridCadastro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Cada grupo padrão ocupa uma coluna */
+.gridCadastro > .inputGroup {
+  grid-column: span 1;
+}
+
+/* Selects ocupam a linha inteira com margens vertical */
+.gridCadastro > .inputGroup:has(select) {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+/* Ajuste específico: diminuir o margin-top do select de Áreas */
+.gridCadastro > .inputGroup:has(#areas) {
+  margin-top: 6px;
 }
 
 /* Responsividade */

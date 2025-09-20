@@ -1,17 +1,17 @@
 export interface ModalProps {
-  isOpen: boolean;              // controla se o modal está visível
-  title?: string;               // título do modal
-  description?: string;         // descrição ou mensagem
-  onConfirm?: () => void;       // callback do botão Confirmar
-  onCancel?: () => void;        // callback do botão Cancelar
-  confirmText?: string;         // texto do botão Confirmar
-  cancelText?: string;          // texto do botão Cancelar
+  aberto: boolean;              // controla se o modal está visível
+  titulo?: string;               // título do modal
+  descricao?: string;           // descrição ou mensagem
+  aoConfirmar?: () => void;     // callback do botão Confirmar
+  aoCancelar?: () => void;      // callback do botão Cancelar
+  textoConfirmar?: string;      // texto do botão Confirmar
+  textoCancelar?: string;       // texto do botão Cancelar
 }
 
-export interface ModalAlertProps {
-  isOpen: boolean;            // controla se o modal está visível
-  title?: string;             // título do alerta
-  message: string;            // mensagem do alerta
-  onClose?: () => void;       // callback quando o usuário fechar o modal
-  confirmText?: string;       // texto do botão confirmar
+export interface ModalAlertaProps {
+  aberto: boolean;            // controla se o modal está visível
+  titulo?: string;            // título do alerta
+  mensagem: string;           // mensagem do alerta
+  aoFechar?: () => void;      // callback quando o usuário fechar o modal
+  textoConfirmar?: string;    // texto do botão confirmar
 }

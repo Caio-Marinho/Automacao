@@ -3,7 +3,7 @@ import { useState } from "react";
 import stylesGlobal from "@/styles/componente.module.css";
 import styleLocal from "./input.module.css";
 import { Eye, EyeOff } from "lucide-react";
-import { InputProps } from "@/types";
+import { EntradaProps } from "@/types";
 
 export default function InputSenha({
     id,
@@ -13,7 +13,7 @@ export default function InputSenha({
     valor,
     AtualizarEstado,
     estilo
-}: InputProps) {
+}: EntradaProps) {
     const [mostrarSenha, setMostrarSenha] = useState(false);
 
     return (

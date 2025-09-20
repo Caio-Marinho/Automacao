@@ -1,6 +1,6 @@
 "use client";
 import stylesGlobal from "@/styles/componente.module.css";
-import { SelectProps } from "@/types";
+import { SelecaoProps } from "@/types";
 
 const Select = ({ 
   id, 
@@ -9,7 +9,7 @@ const Select = ({
   obrigatorio = false, 
   AtualizarEstado, 
   valor 
-}:SelectProps) => {
+}:SelecaoProps) => {
   return (
     <div className={stylesGlobal.inputGroup}>
       <select

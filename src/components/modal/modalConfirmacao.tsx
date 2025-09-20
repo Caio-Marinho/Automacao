@@ -1,28 +1,28 @@
 "use client";
-import { ModalProps } from "@/types/modal";
+import { ModalProps } from "@/types";
 import BotaoConfirm from "../button/buttonConfirm";
 import BotaoCancelar from "../button/buttonCancel";
 import styles from "./modal.module.css";
 
 export default function Modal({
-  isOpen,
-  title = "Confirmação",
-  description = "Deseja realmente continuar?",
-  onConfirm,
-  onCancel,
-  confirmText = "Confirmar",
-  cancelText = "Cancelar"
+  aberto,
+  titulo = "Confirmação",
+  descricao = "Deseja realmente continuar?",
+  aoConfirmar,
+  aoCancelar,
+  textoConfirmar = "Confirmar",
+  textoCancelar = "Cancelar"
 }: ModalProps) {
-  if (!isOpen) return null;
+  if (!aberto) return null;
 
   return (
-    <div className={styles.overlay} onClick={onCancel}>
+    <div className={styles.overlay} onClick={aoCancelar}>
       <div className={styles.modal} onClick={e => e.stopPropagation()}>
-        <h2>{title}</h2>
-        <p>{description}</p>
+        <h2>{titulo}</h2>
+        <p>{descricao}</p>
         <div className={styles.modalButtons}>
-          <BotaoCancelar AoClicar={onCancel} texto={cancelText} />
-          <BotaoConfirm AoClicar={onConfirm} texto={confirmText} />
+          <BotaoCancelar AoClicar={aoCancelar} texto={textoCancelar} />
+          <BotaoConfirm AoClicar={aoConfirmar} texto={textoConfirmar} />
         </div>
       </div>
     </div>

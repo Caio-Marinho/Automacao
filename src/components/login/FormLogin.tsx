@@ -3,7 +3,7 @@ import stylesGlobal from "@/styles/componente.module.css";
 import InputTexto from "../input/inputTexto";
 import InputSenha from "../input/inputSenha";
 
-export default function LoginForm() {
+export default function FormLogin() {
   return (
      <div className={stylesGlobal.form}>
       <h2>Login</h2>
