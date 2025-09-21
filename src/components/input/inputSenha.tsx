@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import stylesGlobal from "@/styles/componente.module.css";
-import styleLocal from "./input.module.css";
+import styleLocal from "@/styles/input.module.css";
 import { Eye, EyeOff } from "lucide-react";
 import { EntradaProps } from "@/types";
 

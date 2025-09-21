@@ -88,6 +88,11 @@
   gap: 8px;
 }
 
+.mensagem {
+  white-space: pre-wrap; /* respeita quebras de linha (\n) e espaços */
+  margin: 10px 0;
+}
+
 /* responsividade */
 @media (max-width: 480px) {
   .modal {

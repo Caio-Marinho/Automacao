@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import styles from "./button.module.css"; // CSS Module
+import styles from "@/styles/button.module.css"; // CSS Module
 import { BotaoRotaProps } from "@/types";
 
 

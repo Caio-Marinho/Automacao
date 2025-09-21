@@ -9,6 +9,7 @@ import Botao from "./button/button";
 import ModalAlerta from "./modal/modalAlerta";
 import BotaoRota from "./button/buttonRouter";
 
+
 // Hook para detectar se é mobile
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
@@ -26,7 +27,7 @@ function useIsMobile(breakpoint = 768) {
 export default function ContainerAutenticacao() {
   const [isAlertOpen, setIsAlertOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
-
+  const [mensagem,setMensagem] = useState("");
   const abrirAlerta = () => setIsAlertOpen(true);
   const fecharAlerta = () => {
     setIsAlertOpen(false);
@@ -34,7 +35,6 @@ export default function ContainerAutenticacao() {
   }
 
   const isMobile = useIsMobile();
-  const router = useRouter();
 
   // Componente interno para mobile
   const AuthMobile = () => (
@@ -42,7 +42,7 @@ export default function ContainerAutenticacao() {
       <h2>Bem-vindo</h2>
       <p>Escolha uma opção:</p>
       <BotaoRota texto="Login"  estilo={styles.button} rota="/login"/>
-      <BotaoRota texto="Cadastrar"  estilo={styles.button} rota="/Cadastro"/>
+      <BotaoRota texto="Cadastrar"  estilo={styles.button} rota="/cadastro"/>
     </div>
   );
 
@@ -57,7 +57,7 @@ export default function ContainerAutenticacao() {
           <FormLogin />
         </div>
         <div className={`${styles.form} ${styles.registerForm}`}>
-          <FormCadastroUsuario abrirModalExterno={abrirAlerta} />
+          <FormCadastroUsuario mensagem={setMensagem} abrirModalExterno={abrirAlerta} />
         </div>
 
         {/* Overlay de texto */}
@@ -77,7 +77,7 @@ export default function ContainerAutenticacao() {
       <ModalAlerta
         aberto={isAlertOpen}
         titulo="Atenção"
-        mensagem="Seu cadastro foi enviado com sucesso!, aguarde a aprovação do seu cadastro."
+        mensagem={mensagem}
         aoFechar={fecharAlerta}
         textoConfirmar="Entendi"
       />

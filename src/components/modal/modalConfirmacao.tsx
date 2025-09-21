@@ -2,7 +2,7 @@
 import { ModalProps } from "@/types";
 import BotaoConfirm from "../button/buttonConfirm";
 import BotaoCancelar from "../button/buttonCancel";
-import styles from "./modal.module.css";
+import styles from "@/styles/modal.module.css";
 
 export default function Modal({
   aberto,

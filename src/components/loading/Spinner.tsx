@@ -1,5 +1,5 @@
 "use client";
-import styles from "./loadingSpinner.module.css";
+import styles from "@/styles/loadingSpinner.module.css";
 import ReactDOM from "react-dom";
 
 interface LoadingSpinnerProps {

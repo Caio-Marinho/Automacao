@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { X } from "lucide-react";
-import styles from "./modal.module.css";
+import styles from "@/styles/modal.module.css";
 import { ModalAlertaDinamicoProps } from "@/types";
 
 export default function ModalAlertaDinamico({ aberto, titulo, mensagens, aoFechar }: ModalAlertaDinamicoProps) {

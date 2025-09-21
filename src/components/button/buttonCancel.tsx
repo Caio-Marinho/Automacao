@@ -1,6 +1,6 @@
 "use client";
 import { BotaoConfirmarCancelarProps } from "@/types";
-import style from "./button.module.css";
+import style from "@/styles/button.module.css";
 
 export default function BotaoCancelar({  AoClicar, desativar = false, estilo, texto = "Cancelar" }: BotaoConfirmarCancelarProps) {
   return (

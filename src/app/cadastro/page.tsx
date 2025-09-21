@@ -1,7 +1,7 @@
 "use client";
 import FormCadastroUsuario from "@/components/cadastro/FormCadastroUsuario";
 import Link from 'next/link';
-import styles from "./cadastro.module.css";
+import styles from "@/styles/cadastro.module.css";
 import { useEffect, useState } from "react";
 import ModalAlerta from "@/components/modal/modalAlerta";
 import { useRouter } from "next/navigation";
@@ -14,6 +14,7 @@ export default function RegisterPage() {
   }
   const router = useRouter();
   const [renderizar, setRenderizar] = useState(false);
+  const [mensagem,setMensagem] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
@@ -33,12 +34,12 @@ export default function RegisterPage() {
   if (!renderizar) return null;
   return (
     <div className={styles.container}>
-      <FormCadastroUsuario abrirModalExterno={abrirAlerta} />
+      <FormCadastroUsuario mensagem={setMensagem} abrirModalExterno={abrirAlerta} />
       já tem uma conta? <Link href="/login">Login</Link>
       <ModalAlerta
         aberto={isAlertOpen}
         titulo="Atenção"
-        mensagem="Seu cadastro foi enviado com sucesso!, aguarde a aprovação do seu cadastro."
+        mensagem={mensagem}
         aoFechar={fecharAlerta}
         textoConfirmar="Entendi"
       />

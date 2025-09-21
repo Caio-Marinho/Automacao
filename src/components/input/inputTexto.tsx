@@ -1,6 +1,6 @@
 "use client";
 import stylesGlobal from "@/styles/componente.module.css";
-import styleLocal from "./input.module.css";
+import styleLocal from "@/styles/input.module.css";
 import { EntradaProps } from "@/types";
 
 export default function InputTexto({

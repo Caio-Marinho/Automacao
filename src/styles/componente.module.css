@@ -6,7 +6,7 @@
   padding: 20px;*/
 
 .container {
-  width: 80dvw;
+  width: 90dvw;
   height: 90dvh;
   margin: 20px auto;
   border-radius: 12px;
@@ -24,7 +24,7 @@
 /* Forms */
 .form {
   position: absolute;
-  width: 60%;
+  width: 65%;
   height: 100%;
   top: 0;
   right: 26%;
@@ -41,7 +41,7 @@
 
 /* Login inicial */
 .loginForm {
-  left: 0;
+  right: 36%;
 }
 
 /* Cadastro fora da tela à direita */
