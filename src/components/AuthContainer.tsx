@@ -7,6 +7,7 @@ import FormLogin from "./login/FormLogin";
 import FormCadastroUsuario from "./cadastro/FormCadastroUsuario";
 import Botao from "./button/button";
 import ModalAlerta from "./modal/modalAlerta";
+import BotaoRota from "./button/buttonRouter";
 
 // Hook para detectar se é mobile
 function useIsMobile(breakpoint = 768) {
@@ -40,12 +41,8 @@ export default function ContainerAutenticacao() {
     <div className={styles.mobileContainer}>
       <h2>Bem-vindo</h2>
       <p>Escolha uma opção:</p>
-      <button className={styles.button} onClick={() => router.push("/login")}>
-        Login
-      </button>
-      <button className={styles.button} onClick={() => router.push("/cadastro")}>
-        Cadastrar
-      </button>
+      <BotaoRota texto="Login"  estilo={styles.button} rota="/login"/>
+      <BotaoRota texto="Cadastrar"  estilo={styles.button} rota="/Cadastro"/>
     </div>
   );
 
@@ -60,7 +57,7 @@ export default function ContainerAutenticacao() {
           <FormLogin />
         </div>
         <div className={`${styles.form} ${styles.registerForm}`}>
-          <FormCadastroUsuario abrirModal={abrirAlerta} />
+          <FormCadastroUsuario abrirModalExterno={abrirAlerta} />
         </div>
 
         {/* Overlay de texto */}

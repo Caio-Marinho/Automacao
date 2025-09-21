@@ -8,7 +8,7 @@ export default function FormLogin() {
      <div className={stylesGlobal.form}>
       <h2>Login</h2>
 
-      <InputTexto estilo={`${stylesGlobal.inputTop}`} id="email" texto="E-mail Aiesec" obrigatorio valor="" AtualizarEstado={() => {}}/>
+      <InputTexto estilo={`${stylesGlobal.inputTop}`} id="Usuario" texto="Usuario" obrigatorio valor="" AtualizarEstado={() => {}}/>
 
       <InputSenha id="senha" texto="senha" obrigatorio valor="" AtualizarEstado={() => {}} />
 

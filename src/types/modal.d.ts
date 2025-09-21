@@ -15,3 +15,10 @@ export interface ModalAlertaProps {
   aoFechar?: () => void;      // callback quando o usuário fechar o modal
   textoConfirmar?: string;    // texto do botão confirmar
 }
+
+export interface ModalAlertaDinamicoProps {
+  aberto: boolean;
+  titulo?: string;
+  mensagens: string[]; // array de erros ou mensagens
+  aoFechar: () => void;
+}

@@ -33,7 +33,7 @@ export default function RegisterPage() {
   if (!renderizar) return null;
   return (
     <div className={styles.container}>
-      <FormCadastroUsuario abrirModal={abrirAlerta} />
+      <FormCadastroUsuario abrirModalExterno={abrirAlerta} />
       já tem uma conta? <Link href="/login">Login</Link>
       <ModalAlerta
         aberto={isAlertOpen}

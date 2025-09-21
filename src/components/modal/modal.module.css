@@ -1,26 +1,74 @@
+/* overlay do modal */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.4); /* fundo escuro semi-transparente */
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   z-index: 1000;
 }
 
+/* container do modal */
 .modal {
-  background-color: white;
+  background: #fff;
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px 25px;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+}
+
+/* cabeçalho do modal */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.header h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: #222;
+}
+
+/* botão de fechar */
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* corpo do modal */
+.body {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* lista de mensagens */
+.body ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.body li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d32f2f; /* vermelho para erros */
+  margin-bottom: 6px;
 }
 
 .modal h2 {
@@ -38,4 +86,20 @@
   display: flex;
   justify-content: flex-end;
   gap: 8px;
+}
+
+/* responsividade */
+@media (max-width: 480px) {
+  .modal {
+    padding: 15px 20px;
+    width: 95%;
+  }
+
+  .header h3 {
+    font-size: 16px;
+  }
+
+  .body li {
+    font-size: 13px;
+  }
 }

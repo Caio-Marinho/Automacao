@@ -18,3 +18,9 @@ export interface BotaoLinkProps {
   irPara: string;
   children: ReactNode;
 }
+
+interface BotaoRotaProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  texto: string;
+  rota: string;
+  estilo?: string; // classes adicionais opcionais
+}

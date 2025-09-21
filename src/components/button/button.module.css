@@ -65,3 +65,18 @@
 .botaoLink:hover {
   background: #0056b3;
 }
+
+.botaoRota {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.botaoRota:hover {
+  background-color: #0056b3;
+}

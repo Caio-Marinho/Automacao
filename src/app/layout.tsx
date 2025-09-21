@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
+        <div id="modal-root" /> {/* Portal renderiza aqui */}
       </body>
     </html>
   );
