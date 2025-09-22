@@ -49,13 +49,14 @@ export default function FormCadastroUsuario({ abrirModalExterno,mensagem }: Filh
     { valor: "IGT", texto: "IGT" },
     { valor: "PM", texto: "PM" },
     { valor: "F&L", texto: "F&L" },
-    { valor: "LCP", texto: "LCP" },
+    { valor: "EB", texto: "EB" },
   ];
 
   const opcaoesCargo = [
     { valor: "Membro", texto: "Membro" },
     { valor: "TL", texto: "TL" },
     { valor: "Manager", texto: "Manager" },
+    { valor: "Director", texto: "Director" },
     { valor: "VP", texto: "VP" },
     { valor: "LCP", texto: "LCP" },
   ];
