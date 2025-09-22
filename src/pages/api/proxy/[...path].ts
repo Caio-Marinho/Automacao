@@ -1,6 +1,6 @@
 // pages/api/proxy/[...path].ts
 import type { NextApiRequest, NextApiResponse } from "next";
-import { apiExterna } from "../apiExterna";
+import apiExterna  from "../../../service/api/apiExterna";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { path, ...restQuery } = req.query; // separa path do resto da query
